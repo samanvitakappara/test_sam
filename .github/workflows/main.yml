@@ -15,5 +15,5 @@ jobs:
       run: |
         PR_NUMBER=${{ github.event.pull_request.number }}
         curl; -X POST -H "Authorization: token $GITHUB_TOKEN" \
-        -d "{body": "Thank you for your contribution!"}' \
+        -d '{body": "Thank you for your contribution!"}' \
         https://api.github.com/repos/samanvitakappara/test_sam/issues/$PR_NUMBER/comments
