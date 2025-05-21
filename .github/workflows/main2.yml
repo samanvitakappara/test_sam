@@ -1,4 +1,4 @@
-name: Comment on Pull Request
+name: Comment on Pull Request2
 
 on:
   pull_request:
