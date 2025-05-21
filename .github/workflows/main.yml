@@ -15,7 +15,7 @@ jobs:
     - name: Make changes
       run: |
         git config --global user.email "samanvitakappara@gmail.com"
-        git config --global user.name"samanvitakappara"
+        git config --global user.name "samanvitakappara"
        
         echo "new changes" >> changes.txt
         git add changes.txt
