@@ -1,4 +1,4 @@
-name: Comment on Pull Request
+name: Checkout another repository
 
 on:
   pull_request:
@@ -9,11 +9,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Comment on Pull Request
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+    - name: Checkout another repository
+      uses: actions/checkout@v2
+
+    - name: Checkout another repository
+      uses: actions/checkout@v2
+      with: 
+        repository: samanvitakappara/training2
+        token: ${{ secrets.GH_PAT }}
+        path: other-repo
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Run python script
       run: |
-        PR_NUMBER=${{ github.event.pull_request.number }}
-        curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
-        -d '{body: "Thank you for your contribution!"}' \
-        https://api.github.com/repos/samanvitakappara/test_sam/issues/$PR_NUMBER/comments
+        cd other-repo
+        python scipt.py 
+      
