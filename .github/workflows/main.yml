@@ -32,6 +32,6 @@ jobs:
 
     - name: Run python script
       run: |
-        cd other-repo
+        cd training2
         python scipt.py 
       
