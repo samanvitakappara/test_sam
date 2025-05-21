@@ -18,7 +18,7 @@ jobs:
         git config --global user.email "samanvitakappara@gmail.com"
         git config --global user.name"samanvitakappara"
         cd test_sam
-        git checkout featurebranch
+        git checkout Featurebranch
         echo "new changes" >> changes.txt
         git add changes.txt
         git commit -m "add changes"
